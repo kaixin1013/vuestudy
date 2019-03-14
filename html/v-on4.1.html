@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css" />
+		<title>结合图标的练习</title>
+		<style type="text/css">
+			.btn {
+				width: 100px;
+				height: 35;
+				color: rgb(234,111,90);
+				border-radius: 20px;
+				font-size: 14px;
+				background-color: #FFF;
+				border: 1px solid rgb(234,111,90);
+			}
+
+			.link {
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<button type="button" @click="handlefollow" class="btn">
+				<span class="followed link" v-show="followed" @click="handlefollow">
+					<i class="icon-heart"></i> 喜欢 | {{num}}
+				</span>
+				<span class="cancle-followed link" v-show="followed===false" @click="handlefollow">
+					<i class="icon-heart-empty"></i>喜欢 | {{num}}
+				</span>
+			</button>
+
+		</div>
+		<script type="text/javascript">
+			var app = new Vue({
+				el: '#app',
+				data: {
+					followed: false,
+					num: 5
+				},
+				methods: {
+					handlefollow: function() {
+						this.followed = !this.followed;
+						if (this.followed == true) {
+							this.num += 1;
+						} else {
+							this.num -= 1;
+						}
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

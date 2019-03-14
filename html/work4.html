@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<!-- 通过cdn引入vue.js -->
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+		<style type="text/css">
+			.head {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				height: 60px;
+				background: white(40, 140, 9);
+			}
+
+			#app {
+				background-image: url(../img/book8.jpg);
+				background-position: center;
+				background-size:100% ;
+			}
+
+			.brand-logo {
+				color: white;
+				font-size: 35px;
+				margin-left: 15px;
+			}
+
+			a {
+				text-decoration: none;
+			}
+
+			#right-nav {
+				display: flex;
+			}
+
+			#right-nav li {
+				list-style: none;
+				padding-right: 15px;
+			}
+
+			#right-nav li a {
+				color: white;
+			}
+
+			#right-nav li a:hover {
+				text-decoration: underline;
+			}
+
+			.content {
+				width: 50%;
+				height: 650px;
+				margin: 0 auto;
+				margin-top: 30px;
+				
+			}
+
+			.wname {
+				display: flex;
+				margin-top: 10px;
+				margin-left: 10px;
+			}
+
+			.a {
+				width: 200px;
+				height: 40px;
+				border-radius: 10px;
+				margin-left: 10px;
+				border: 1px solid white;
+				outline: none;
+			}
+
+			.password {
+				display: flex;
+				margin-top: 10px;
+				margin-left: 43px;
+			}
+
+
+
+			.sex {
+				display: flex;
+				margin-top: 10px;
+				margin-left: 43px;
+			}
+
+			.c {
+				margin-top: 15px;
+				margin-left: 5px;
+			}
+
+			.papers {
+				display: flex;
+				margin-top: 10px;
+				margin-left: 10px;
+			}
+
+
+			.nus {
+				display: flex;
+				margin-top: 10px;
+				margin-left: 43px;
+			}
+
+			.footer {
+				margin-left: 80px;
+			}
+
+			.g {
+				width: 200px;
+				height: 50px;
+				border-radius: 10px;
+				border: 1px white;
+				outline: none;
+				background-color: rgb(120, 198, 228);
+				color:white;
+
+			}
+		</style>
+	</head>
+	<body>
+		<!-- vue-app根容器 -->
+		<div id="app">
+
+			<div class="head">
+				<a href="#" class="brand-logo">欢迎注册！</a>
+				<ul id="right-nav">
+					<li><a href="#">首页</a></li>
+					<li><a href="#">邮箱注册</a></li>
+					<li><a href="#">意见反馈</a></li>
+				</ul>
+			</div>
+			<div class="content">
+				<div class="wname">
+					<p>用户昵称:</p>
+					<input v-model="netname" placeholder="用户名" class="a">
+				</div>
+				<div class="password">
+					<p>密码:</p>
+					<input v-model="password" placeholder="密码" class="a">
+				</div>
+			<div class="password">
+					<p>确认密码:</p>
+					<input v-model="password1" placeholder="确认密码" class="a">
+				</div>
+				
+				
+				<div class="nus">
+				    <p>号码:</p>
+					<input v-model="num" placeholder="请输入手机号" class="a" />
+				</div>
+				<div class="sex">
+					<p>性别:</p>
+					<div class="c">
+						<input type="radio" id="male" value="先生" v-model="sex" />
+						<label>男</label>
+						<input type="radio" id="female" value="女士" v-model="sex">
+						<label for="female">女</label>
+					</div>
+				</div>
+			
+				<div class="footer">
+					
+					<button type="button" @click="commit" class="g">立即注册</button>
+				</div>
+
+			</div>
+
+
+		</div>
+		<script type="text/javascript">
+			
+			var app = new Vue({
+				el: '#app',
+				data: {
+					netname:'',
+					password:'',
+					nus:'',
+					sex:''
+			
+				},
+				methods: {
+					commit: function() {
+						alert("注册成功！" );
+
+					}
+				}
+			})
+		</script>
+
+	</body>
+</html>

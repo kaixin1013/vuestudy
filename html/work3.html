@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<!-- 通过cdn引入vue.js -->
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css"/>
+
+		<style type="text/css">
+			.container{
+				width: 90%;
+				margin: 0 auto;
+			}
+			.top{
+				display: flex;
+				width: 90%;
+				margin: 0 auto;
+				
+				align-items: center;
+				justify-content: space-between;
+			}
+			
+			.card{
+				width: 80%;
+				height: 80%;
+				display: flex;
+				justify-content: space-between;
+				border:2px solid white;
+				border-radius: 10px;
+				
+			}
+			
+			.right{
+				display: flex;
+				align-items: center;
+				padding-left: 10px;
+			}
+			
+			.left{
+				padding-right: 20px;
+				
+			}
+			.like{
+				color: limegreen;
+			}
+			.no-like{
+				color: #DDDDDD;
+			}
+			
+			.words{
+				padding-left: 10px;
+			}
+			
+			.author-name{
+				font-weight: 800;
+			}
+			
+			.card img{
+				width: 50px;
+				height: 50px;
+				border-radius: 50%;
+			}
+			
+		</style>
+	
+	
+	</head>
+	<body>
+		<div id="app">
+			<div class="top">
+				<p>推荐作者</p>
+			    <p><i class="icon-repeat"></i>换一批</p>
+			</div>
+			
+			<div class="container">
+				<div class="card" v-for="book in books">
+					<div class="right">
+						<div class="logo">
+							<img :src="book.logo" >
+						</div>
+						
+						<div class="words">
+							<div class="author-name">
+								<p>{{book.name}}</p>
+							</div>
+							<div class="author-jj">
+								<p>{{book.words}}</p>
+							</div>
+							
+						</div>
+						
+					</div>
+					<div class="left">
+						<p v-if="book.like === true" class="like"><i class="icon-plus"></i>+关注</p>
+						<p v-else class="no-like"><i class="icon-okA"></i>已关注</p>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			var app = new Vue({
+				el:'#app',
+				data:{
+					show:true,
+					books:[
+						{
+							logo:'../img/1.jpg',
+							name:'sehun',
+							words:'写了325k字 ·11k喜欢',
+							like:true,
+						},
+						
+						{
+							logo:'../img/2.png',
+							name:'蜜思1013',
+							words:'写了302.1k字 ·19k喜欢',
+							like:false,
+						},
+						
+						{
+							logo:'../img/3.jpg',
+							name:'梅拾璎',
+							words:'写了269.3k字 ·23.4k喜欢',
+							like:true,
+						},
+						
+						{
+							logo:'../img/4.jpg',
+							name:' 陶然然_niit',
+							words:'写了325k字 ·11k喜欢',
+							like:false,
+						},
+						
+						{
+							logo:'../img/111.jpg',
+							name:'胡七筒',
+							words:'写了325k字 ·11k喜欢',
+							like:true,
+						},
+					]
+				}
+			})
+		</script>
+		
+	</body>
+</html>

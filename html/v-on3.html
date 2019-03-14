@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Vue.js v-on第一个</title>
+		<!-- 通过cdn引入Vue-->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+	</head>
+	<body>
+		<div id="app">
+			<h2>{{age}}</h2>
+			<button type="button" v-on:click="add">加一岁</button>
+			<button type="button" v-on:click="substruct(5)">减五岁</button>
+		</div>
+		<script type="text/javascript">
+			
+			var app=new Vue({
+				el:"#app",
+				data:{
+					
+					age:30
+					
+				},
+				methods:{
+					add:function(){
+						this.age+=1;
+				},
+				substruct:function(num){
+					//判断当前年龄是否够减
+					if(this.age-num<0){
+						alert('不够减了');
+					}else{
+						this.age-=num;
+					}
+					this.age-=num;
+				}
+				}
+			})
+		</script>
+	
+	</body>
+</html>

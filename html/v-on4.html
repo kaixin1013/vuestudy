@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>v-model数据双向绑定练习</title>
+		<!-- 通过CDN引入Vue.js -->
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css"/>
+		<style type="text/css">
+			.follwed{
+				color: #666666;
+			}
+			.cancle{
+				color: #008000;
+			}
+			.link{
+				cursor: pointer;
+			}
+			.btn{
+				width: 120px;
+				height:35px ;
+				color: rgb(234,111,90);
+				
+				border-radius:20px;
+				font-size:14px;
+				background-color:#FFF;
+				border:1px solid rgb(234,111,90);
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<h2>{{name}}</h2>
+			<span class="follwed link" v-show="followed" @click="handclick">
+				<i class="icon-heart-empty"></i>喜欢
+			</span>
+			<span class="cancle link" v-show="followed===false" @click="handclick">
+				<i class="icon-"></i>不喜欢
+				<br>
+		<button type="button" class="btn"><i class="icon-heart-empty">喜欢</button>
+			</div>
+		<script type="text/javascript">
+			var app = new Vue({
+				el: '#app',
+				data: {
+					name: 'kaixin',
+
+					followed:true
+
+				},
+				methods: {
+					handclick:function(){
+						this.followed=!this.followed
+					}
+
+
+
+					}
+				}
+			)
+		</script>
+	</body>
+</html>
