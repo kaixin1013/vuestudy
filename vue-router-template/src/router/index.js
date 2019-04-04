@@ -31,7 +31,33 @@ export default new Router({
 					component: resolve => require(['../components/Task.vue'], resolve),
 					meta: {
 						title: '任务中心'
-					}
+					},
+					children: [{
+								//我的信息
+								path: '/user_task',
+								component: resolve => require(['../components/UTask.vue'], resolve),
+								meta: {
+									title: '我的任务'
+								}
+							},
+							{
+								//用户信息
+								path: '/user_task',
+								component: resolve => require(['../components/UTask1.vue'], resolve),
+								meta: {
+									title: '我的任务1'
+								}
+							},
+							{
+								//账号安全
+								path: '/user_task',
+								component: resolve => require(['../components/UTask.vue'], resolve),
+								meta: {
+									title: '我的任务2'
+								}
+							}
+						]
+					
 				},
 				{
 					//库管理
